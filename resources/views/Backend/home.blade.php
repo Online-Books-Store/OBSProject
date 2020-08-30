@@ -1,0 +1,1 @@
+@extends('Backend.admin.layouts.master');
