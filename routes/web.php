@@ -40,9 +40,11 @@ Route::group(['prefix' =>'admin/dashboard'],function(){
 Auth::routes();
 
 
-// Route::group(['prefix' => 'admin'], function () {
-//     Route::get('/home', 'HomeController@index')->name('home');
-    
-// });
 
-// Backend Route
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    
+});
+
