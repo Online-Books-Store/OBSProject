@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Post;
 
 class PostController extends Controller
@@ -19,7 +20,7 @@ class PostController extends Controller
         return view('Backend/admin/post/create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         $post = Post::create($request->all());
         return redirect('admin/dashboard/post')->with('success','Successfully Create Post!');
@@ -37,7 +38,7 @@ class PostController extends Controller
         return view('Backend/admin/post/update',compact('post'));
     }
 
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post = Post::find($id);
         $post->title = $request->title;

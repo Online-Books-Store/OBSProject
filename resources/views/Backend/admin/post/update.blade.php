@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        @include('Backend/admin/messages/error')
             <div class="card card-body">
                 <form action="" method="post">
                 @csrf
