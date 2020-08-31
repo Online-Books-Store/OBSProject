@@ -10,11 +10,10 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#index.html">Home</a></li>
+          <li class="active"><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="get-started"><a href="{{ route('login') }}">Login</a></li>
           <li class="get-started"><a href="{{ route('register') }}">Register</a></li>
