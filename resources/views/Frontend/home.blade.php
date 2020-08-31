@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-@extends('layouts/app')
-@section('content')
-<h1>Hello Frontend</h1>
-@endsection
-=======
 
 @extends('FrontEnd.layouts.master')
 @section('content')
@@ -718,4 +712,3 @@
 @endsection
  
 
->>>>>>> 3606613b09071a39743eea35ff6c19ebad42cf99
