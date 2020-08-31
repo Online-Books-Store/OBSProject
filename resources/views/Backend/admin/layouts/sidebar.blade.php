@@ -60,7 +60,7 @@
 
 
             <li class="nav-item">
-              <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout').submit();">
+              <a href="#" class="nav-link" onclick="event.preventDefault(); if(confirm('Are You Sure?')){document.getElementById('logout').submit();}">
                 <i class="nav-icon fas fa-power-off"></i>
                 <p>
                   Logout

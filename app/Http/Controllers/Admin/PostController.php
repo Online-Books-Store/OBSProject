@@ -22,7 +22,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = Post::create($request->all());
-        return redirect('admin/dashboard/post');
+        return redirect('admin/dashboard/post')->with('success','Successfully Create Post!');
     }
 
     public function show($id)
@@ -43,13 +43,13 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
-        return redirect('admin/dashboard/post');
+        return redirect('admin/dashboard/post')->with('success','Successfully Update Post!');
     }
 
     public function destroy($id)
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect('admin/dashboard/post');
+        return redirect('admin/dashboard/post')->with('success','Successfully Delete Post!');
     }
 }
