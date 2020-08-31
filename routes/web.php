@@ -2,10 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('Frontend.home');
-=======
+
 // Frontend Route
 
 Route::get('/',function(){
@@ -22,7 +19,6 @@ Route::get('/',function(){
 
 Route::get('/home',function(){
     return view('home');
->>>>>>> 92771967c71eea67e802e827b45285c5dd6e05d5
 });
 
 Route::get('admin/dashboard', function () {
