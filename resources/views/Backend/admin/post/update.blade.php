@@ -9,13 +9,15 @@
                 @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title">
+                        <input type="text" class="form-control" name="title" value="{{$post->title}}">
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+                        <textarea name="content" id="content" class="form-control" rows="10">
+                            {{$post->content}}
+                        </textarea>
                     </div>
-                    <button class="btn btn-primary" type="submit">Create</button>
+                    <button class="btn btn-primary" type="submit">Update</button>
                 </form>
             </div>
         </div>

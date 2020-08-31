@@ -44,7 +44,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{url("admin/dashboard/post")}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Post Page</p>
                 </a>
