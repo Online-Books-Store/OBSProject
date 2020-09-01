@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\role;
 
 class RoleSeeder extends Seeder
 {
@@ -11,6 +12,11 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $roles = ['Admin','Poster','Normal'];
+        for($i = 0; $i <3; $i++){
+            $role = new role;
+            $role->role_name = $roles[$i];
+            $role->save();
+        }
     }
 }
