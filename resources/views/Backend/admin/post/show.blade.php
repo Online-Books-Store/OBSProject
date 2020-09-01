@@ -6,7 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center">{{$post->title}}</div>
-                <div class="card-body">{{$post->content}}</div>
+                <div class="card-body">
+                <img src="{{isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150'}}"  class="rounded mx-auto d-block" alt="">
+                <br>
+                <div class="well">
+                    {{$post->content}}
+                </div>
+                </div>
                 <div class="card-footer">
                     <div class="float-left">
                         <a href="{{url("admin/dashboard/post")}}" class="btn btn-info">Back</a>
