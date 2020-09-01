@@ -12,7 +12,7 @@
             <div class="card text-dark mb-3">
                 <div class="card-header bg-primary text-center">{{$post->title}}</div>
                 <div class="card-body">
-                <img src="{{ isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150' }}" class="img-thumbnail rounded mx-auto d-block" style="width:200px; height:250px;" alt="image">
+                <img src="{{ isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150' }}" class="rounded mx-auto d-block" style="width:310px; height:350px;" alt="image">
                 <br>
                 <div class="well">
                     {{substr($post->content,0,100)}}
