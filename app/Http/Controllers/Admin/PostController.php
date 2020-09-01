@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(8);
+        $posts = Post::paginate(6);
         return view('Backend/admin/post/index',compact('posts'));
     }
 
@@ -22,7 +22,31 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        $post = Post::create($request->all());
+        // $path = 'uploads';
+        // $imagePath = storage_path($path);
+
+        // $post = new Post();
+        // $imageName = time().'_'.$request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('uploads',$imageName);
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $imageName = time().'_'.$image->getClientOriginalName();
+            $request->file('image')->storeAs('uploads',$imageName);
+         
+            Post::create([
+                'title' => $request->title,
+                'content' => $request->content,
+                'image' => $imageName,
+                ]);
+        }else{
+            Post::create([
+                'title' => $request->title,
+                'content' => $request->content,
+                ]);
+        }
+
+        // $post = Post::create($request->all());
         return redirect('admin/dashboard/post')->with('success','Successfully Create Post!');
     }
 
