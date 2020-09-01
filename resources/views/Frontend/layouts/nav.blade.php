@@ -15,8 +15,8 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="get-started"><a href="{{ route('login') }}">Login</a></li>
-          <li class="get-started"><a href="{{ route('register') }}">Register</a></li>
+          <li class="get-started"><a href="{{ url('/userlogin') }}">Login</a></li>
+          <li class="get-started"><a href="{{ url('/userregister') }}">Register</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
