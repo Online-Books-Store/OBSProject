@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\user;
 class userSeeder extends Seeder
 {
     /**
@@ -11,13 +11,11 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        $name = 'username';
-        $password = 'password';
-        for($i = 1; $i < 10; $i++){
-            $user = new User;
-            $user->name = $name.$i;
-            $user->email = $name.$i."@gmail.com";
-            $user->password = bcrypt($password);
+        for($i = 0; $i<10; $i++){
+            $user = new user;
+            $user->name = 'username'.$i;
+            $user->email = "username".$i."@gmail.com";
+            $user->password = bcrypt('password');
             $user->role_id = rand(1,3);
             $user->save();
         }

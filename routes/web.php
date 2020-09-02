@@ -5,13 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 // Frontend Route
 
-Route::get('/',function(){
-    return view('Frontend/home');
-});
-
-// Frontend Route
+Route::get('/','PageController@index');
+Route::get('/userlogin','PageController@login');
+Route::get('/userregister','PageController@register');
 
 
+//=====================================================
 
 
 
@@ -38,8 +37,6 @@ Route::group(['prefix' =>'admin/dashboard'],function(){
 });
 
 Auth::routes();
-
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -16,11 +16,15 @@ class PageController extends Controller
         return view('FrontEnd.home');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function login()
+    {
+        return view('FrontEnd.userLogin');
+    }
+
+    public function register()
+    {
+        return view('FrontEnd.userRegister');
+    }
     public function create()
     {
         //
