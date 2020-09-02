@@ -15,7 +15,7 @@ class AuthorSeeder extends Seeder
         $author = "author";
         for($i = 0; $i<10; $i++){
             $authors = new author;
-            $authors->author_name = $author.$i;
+            $authors->name = $author.$i;
             $authors->save();
         }
     }

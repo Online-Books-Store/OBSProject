@@ -55,6 +55,18 @@
                   <p>Category Page</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/dashboard/author")}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Author Page</p>
+                </a>
+              </li>
             </ul>
           </li>
 

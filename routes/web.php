@@ -24,6 +24,7 @@ Route::get('admin/dashboard', function () {
     return view('Backend/admin/layouts/master');
 });
 
+// Post Route
 Route::group(['prefix' =>'admin/dashboard'],function(){
     Route::get('/post','Admin\PostController@index');
     Route::get('/post/create','Admin\PostController@create');
@@ -32,9 +33,18 @@ Route::group(['prefix' =>'admin/dashboard'],function(){
     Route::get('/post/{id}/edit','Admin\PostController@edit');
     Route::post('/post/{id}/edit','Admin\PostController@update');
     Route::get('/post/{id}/delete','Admin\PostController@destroy');
-
-
 });
+
+// Author Route
+Route::group(['prefix'=>'admin/dashboard'],function(){
+    Route::get('/author','Admin\AuthorController@index');
+    Route::get('/author/create','Admin\AuthorController@create');
+    Route::post('/author/create','Admin\AuthorController@store');
+    Route::get('/author/{id}/edit','Admin\AuthorController@edit');
+    Route::post('/author/{id}/edit','Admin\AuthorController@update');
+    Route::get('/author/{id}/delete','Admin\AuthorController@destroy');
+});
+
 
 Auth::routes();
 

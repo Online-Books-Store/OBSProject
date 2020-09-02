@@ -13,7 +13,7 @@ class PostSeeder extends Seeder
     {
         // composer require fzaninotto/faker
         $post = Faker\Factory::create();
-        for($i = 0; $i<100; $i++){
+        for($i = 0; $i<20; $i++){
             $posts = new Post;
             $posts->user_id = rand(1,10);
             $posts->author_id = rand(1,10);
