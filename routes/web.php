@@ -9,7 +9,7 @@ Route::get('/','PageController@index');
 Route::get('/userlogin','PageController@login');
 Route::get('/userregister','PageController@register');
 
-
+Route::get('/book/{id}/view','pageController@show');
 //=====================================================
 
 

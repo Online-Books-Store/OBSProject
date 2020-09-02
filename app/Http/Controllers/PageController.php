@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
+use App\category;
 class PageController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('FrontEnd.home');
+        $books = Post::limit(8)->get();
+        $categories = category::all();
+        return view('FrontEnd.home',compact('books','categories'));
     }
 
     public function login()
@@ -49,7 +52,8 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Post::findOrfail($id);
+        return view('Frontend.book',compact('book'));
     }
 
     /**
