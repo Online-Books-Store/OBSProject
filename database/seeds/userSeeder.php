@@ -11,13 +11,12 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i<10; $i++){
-            $user = new user;
-            $user->name = 'username'.$i;
-            $user->email = "username".$i."@gmail.com";
-            $user->password = bcrypt('password');
-            $user->role_id = rand(1,3);
-            $user->save();
+        // for($i = 0; $i<10; $i++){
+        //     $user = new user;
+        //     $user->name = 'username'.$i;
+        //     $user->email = "username".$i."@gmail.com";
+        //     $user->password = bcrypt('password');
+        //     $user->save();
         }
     }
 }

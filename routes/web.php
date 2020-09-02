@@ -45,6 +45,16 @@ Route::group(['prefix'=>'admin/dashboard'],function(){
     Route::get('/author/{id}/delete','Admin\AuthorController@destroy');
 });
 
+// User Route
+Route::group(['prefix'=>'admin/dashboard'],function(){
+    Route::get('/user','Admin\UserController@index');
+    Route::get('/user/create','Admin\UserController@create');
+    Route::post('/user/create','Admin\UserController@store');
+    Route::get('/user/{id}/edit','Admin\UserController@edit');
+    Route::post('/user/{id}/edit','Admin\UserController@update');
+    Route::get('/user/{id}/delete','Admin\UserController@destroy');
+});
+
 
 Auth::routes();
 
