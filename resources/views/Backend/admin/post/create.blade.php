@@ -10,11 +10,11 @@
                 @csrf
                     <div class="form-group">
                         <label for="title">Book Title</label>
-                        <input type="text" class="form-control" name="title">
+                        <input type="text" class="form-control" name="title" placeholder="Please Add Book Title">
                     </div>
                     <div class="form-group">
                         <label for="content">Book Content</label>
-                        <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+                        <textarea name="content" id="content" placeholder="Please Add Book Content ..." class="form-control" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="image">Book Image</label>
