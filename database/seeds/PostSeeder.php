@@ -11,6 +11,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
+        // composer require fzaninotto/faker
         $post = Faker\Factory::create();
         for($i = 0; $i<100; $i++){
             $posts = new Post;
