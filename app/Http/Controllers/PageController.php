@@ -96,4 +96,10 @@ class PageController extends Controller
     {
         //
     }
+    public function category($id)
+    {
+        $posts = post::where('category_id',$id)->get();
+        $category = category::find($id);
+        return view('Frontend.category',compact('posts','category'));
+    }
 }

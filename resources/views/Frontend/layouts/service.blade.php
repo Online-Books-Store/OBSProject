@@ -19,9 +19,9 @@
           <div class="row">
             @foreach ($books as $book)
             <div class="col-md-3 d-flex align-items-stretch mb-3">
-              <div class="card" style="background-image: url({{asset($book->image)}}" data-aos="fade-up" data-aos-delay="100">
+              <div class="card" style="background-image: url({{asset('uploads/'.$book->image)}}); width:100%;" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-body">
-                <h5 class="card-title"><a href="">{{$book->title}}</a></h5>
+                <h5 class="card-title"><a href="{{url('book/'.$book->id.'/view')}}">{{$book->title}}</a></h5>
                   <p class="card-text">{{$book->content}}</p>
                   <div class="read-more"><a href="{{url('book/'.$book->id.'/view')}}"><i class="icofont-arrow-right"></i> Read More</a></div>
                 </div>
@@ -48,7 +48,7 @@
             <div class="col-lg-3 col-md-4">
               <div class="icon-box">
                 <i class="ri-store-line" style="color: #ffbb2c;"></i>
-              <h3><a href="">{{$category->category_name}}</a></h3>
+              <h3><a href="{{url('/book/category/'.$category->id)}}">{{$category->category_name}}</a></h3>
               </div>
             </div>
             @endforeach

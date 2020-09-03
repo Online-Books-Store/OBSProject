@@ -33,7 +33,7 @@
                   </div>
             </form>
             @else
-            <p>Do you Want to Review? Please <a href="{{route('userlogin')}}">Login</a> OR <a href="{{route('userregister')}}">Register</a></p>
+            <p>Do you Want to Review? Please <a href="{{url('userlogin')}}">Login</a> OR <a href="{{url('userregister')}}">Register</a></p>
             @endif
 
             

@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
 
       <div class="card col-lg-5 col-md-12 p-3" data-aos-delay="300">
-        <form action="{{ route('login') }}" method="post">
+        <form method="POST" action="{{ route('login') }}">
           @csrf
           <div class="form-group">
             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"/>

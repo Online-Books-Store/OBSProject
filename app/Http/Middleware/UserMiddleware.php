@@ -16,11 +16,15 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->status == 'admin'){
-
-            return $next($request);
-        }else{
+        if(! auth()->check()){
             return redirect('/');
+        }else{
+            if(auth()->user()->status == 'admin'){
+                return $next($request);
+            }else{
+                return redirect('/');
+            }
         }
+        
     }
 }
