@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\category;
+use App\comment;
 class PageController extends Controller
 {
     /**
@@ -53,7 +54,8 @@ class PageController extends Controller
     public function show($id)
     {
         $book = Post::findOrfail($id);
-        return view('Frontend.book',compact('book'));
+        $comments = comment::where('post_id',$id)->get();
+        return view('Frontend.book',compact('book','comments'));
     }
 
     /**
