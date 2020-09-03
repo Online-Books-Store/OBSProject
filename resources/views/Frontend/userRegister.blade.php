@@ -1,5 +1,5 @@
 @extends('FrontEnd.layouts.master')
-@section('title','login')
+@section('title','Register')
 @section('content')
 <div class="container">
 
@@ -9,8 +9,9 @@
 
     <div class="row justify-content-center">
 
-      <div class="col-lg-5 col-md-12" data-aos-delay="300">
-        <form action="" method="post">
+      <div class="card col-lg-5 col-md-12 p-3" data-aos-delay="300">
+      <form action="{{url('register')}}" method="post">
+        @csrf
           <div class="form-group">
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" />
             <div class="validate"></div>
@@ -23,7 +24,9 @@
             <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
             <div class="validate"></div>
           </div>
-          <input type="submit" class="btn btn-info " value="Login">
+          <a class="btn btn-outline-secondary" href="{{url('/')}}">Back</a>
+          <input type="submit" class="btn btn-info " value="Register">
+          <p class="text-center mt-3">If You Have Account, Please <a href="{{url('userlogin')}}"> Login</a>.</p>
         </form>
       </div>
 

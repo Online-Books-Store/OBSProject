@@ -22,10 +22,10 @@
       </div>
       <div class="container">
             @if (auth()->check())
-            <form >
+            <form method="" action="{{url('/book/'. $book->id .'/comment')}}">
                   <div class="row">
                     <div class="col-9">
-                      <input type="text" class="form-control" placeholder="Review...">
+                      <input type="text" class="form-control" placeholder="Review..." name="comment">
                     </div>
                     <div class="col-2">
                       <input type="submit" class="form-control btn btn-info" value="Review">
@@ -33,19 +33,21 @@
                   </div>
             </form>
             @else
-            <p>Do you Want to Review? Please <a href="{{route('login')}}">Login</a> OR <a href="{{route('register')}}">Register</a></p>
+            <p>Do you Want to Review? Please <a href="{{route('userlogin')}}">Login</a> OR <a href="{{route('userregister')}}">Register</a></p>
             @endif
 
             
       </div>
       <div class="container">
             @foreach ($comments as $comment)
-            <div class="card mt-2">
-                  <div class="card-title">
-                        {{$comment->user->name}}
+            <div class="card m-2">
+                  <div class="card-title p-3 m-0">
+                        <i>{{$comment->user->name}}</i>
                   </div>
-                  <div class="card-body">
-                        {{$comment->comment}}
+                  <div class="card-body p-0 m-2">
+                        <div class="alert alert-primary" role="alert">
+                              {{$comment->comment}}
+                        </div>
                   </div>
             </div>
             @endforeach

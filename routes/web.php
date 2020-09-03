@@ -9,7 +9,8 @@ Route::get('/','PageController@index');
 Route::get('/userlogin','PageController@login');
 Route::get('/userregister','PageController@register');
 
-Route::get('/book/{id}/view','pageController@show');
+Route::get('/book/{id}/view','PageController@show');
+Route::get('/book/{id}/comment','PageController@create');
 //=====================================================
 
 

@@ -29,9 +29,14 @@ class PageController extends Controller
     {
         return view('FrontEnd.userRegister');
     }
-    public function create()
+    public function create(Request $request, $id)
     {
-        //
+        $comment = new comment;
+        $comment->comment = $request->comment;
+        $comment->post_id = $id;
+        $comment->user_id = auth()->user()->id;
+        $comment->save();
+        return redirect(url('/book/'.$id.'/view'));
     }
 
     /**
@@ -54,7 +59,7 @@ class PageController extends Controller
     public function show($id)
     {
         $book = Post::findOrfail($id);
-        $comments = comment::where('post_id',$id)->get();
+        $comments = comment::where('post_id',$id)->orderBy('id', 'DESC')->get();
         return view('Frontend.book',compact('book','comments'));
     }
 
