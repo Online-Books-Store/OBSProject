@@ -1,8 +1,8 @@
 
 @extends('FrontEnd.layouts.master')
-@include('FrontEnd.layouts.nav')
 
 @section('content')
+@include('FrontEnd.layouts.nav')
 
 @include('FrontEnd.layouts.hero')
 
