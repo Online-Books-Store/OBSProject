@@ -10,7 +10,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{url('/#hero')}}">Home</a></li>
+          <li class="active"><a href="{{url('/')}}">Home</a></li>
           <li><a href="{{url('/#about')}}">About</a></li>
           <li><a href="{{url('/#services')}}">Books</a></li>
           <li><a href="{{url('/#team')}}">Team</a></li>
