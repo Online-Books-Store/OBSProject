@@ -14,13 +14,24 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="content" class="form-control" rows="10">
-                            {{$post->content}}
+                        <textarea name="content" id="content" class="form-control" rows="10">{{$post->content}}
                         </textarea>
                     </div>
                     <div class="form-group">
+                        <label for="category">Post Category</label>
+                        <select name="category_id" class="form-control">
+                            <option value="">Select Category</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}"
+                                {{ $post->category_id == $category->id ? 'selected' : ''}}
+                                >{{$category->category_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control-file" name="image" vlaue="{{isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150'}}">
+                        <input type="file" class="form-control-file mb-2" name="image" vlaue="{{isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150'}}">
+                        <img src="{{asset('uploads/'.$post->image)}}" style="width:120px;" alt="">
                     </div>
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
