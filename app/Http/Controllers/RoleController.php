@@ -3,31 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use App\category;
-class PageController extends Controller
+use App\role;
+use App\User;
+
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $books = Post::limit(8)->get();
-        $categories = category::all();
-        return view('FrontEnd.home',compact('books','categories'));
+        $user = User::findOrFail($id);
+        $role = User::findOrFail($id)->role;
+
+        dd(compact('user','role'));
     }
 
-    public function login()
-    {
-        return view('FrontEnd.userLogin');
-    }
-
-    public function register()
-    {
-        return view('FrontEnd.userRegister');
-    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
@@ -52,8 +50,7 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        $book = Post::findOrfail($id);
-        return view('Frontend.book',compact('book'));
+        //
     }
 
     /**
