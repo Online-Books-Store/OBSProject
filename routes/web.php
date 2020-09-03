@@ -34,6 +34,16 @@ Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],funct
     Route::get('/post/{id}/delete','Admin\PostController@destroy');
 });
 
+// Category Route
+Route::group(['prefix' =>'admin/dashboard'],function(){
+    Route::get('/category','Admin\CategoryController@index');
+    Route::get('/category/create','Admin\CategoryController@create');
+    Route::post('/category/create','Admin\CategoryController@store');
+    Route::get('/category/{id}/edit','Admin\CategoryController@edit');
+    Route::post('/category/{id}/edit','Admin\CategoryController@update');
+    Route::get('/category/{id}/delete','Admin\CategoryController@destroy');
+});
+
 // Author Route
 Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
     Route::get('/author','Admin\AuthorController@index');

@@ -10,11 +10,20 @@
                 @csrf
                     <div class="form-group">
                         <label for="title">Book Title</label>
-                        <input type="text" class="form-control" name="title">
+                        <input type="text" class="form-control" value="{{old('title')}}" name="title" placeholder="Please Add Book Title">
                     </div>
                     <div class="form-group">
                         <label for="content">Book Content</label>
-                        <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+                        <textarea name="content" id="content" placeholder="Please Add Book Content ..." class="form-control" rows="10">{{old('content')}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Book Category</label>
+                        <select name="category_id" id="" class="form-control">
+                            <option value="">Select Category</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="image">Book Image</label>
