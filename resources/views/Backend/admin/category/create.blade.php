@@ -1,5 +1,5 @@
 @extends('Backend/admin/layouts/master')
-@section('title','Author')
+@section('title','Categroy')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,14 +8,14 @@
                 <form action="" method="post">
                 @csrf
                     <div class="form-group">
-                        <label for="name">Author Name</label>
-                        <input type="text" value="{{$author->name}}" name="name" class="form-control" placeholder="Please Add Author Name">
+                        <label for="name">Category Name</label>
+                        <input type="text" name="category_name" class="form-control" placeholder="Please add category name">
                     </div>
                     <div class="float-left">
-                        <a href="{{url("admin/dashboard/author")}}" class="btn btn-primary">Back</a>
+                        <a href="{{url("admin/dashboard/category")}}" class="btn btn-primary">Back</a>
                     </div>
                     <div class="float-right">
-                        <button class="btn btn-primary" type="submit">Update</button>
+                        <button class="btn btn-primary" type="submit">Create</button>
                     </div>
                 </form>
             </div>

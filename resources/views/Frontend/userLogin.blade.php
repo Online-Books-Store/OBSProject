@@ -9,8 +9,8 @@
 
     <div class="row justify-content-center">
 
-      <div class="col-lg-5 col-md-12" data-aos-delay="300">
-        <form action="{{ route('login') }}" method="post">
+      <div class="card col-lg-5 col-md-12 p-3" data-aos-delay="300">
+        <form method="POST" action="{{ route('login') }}">
           @csrf
           <div class="form-group">
             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"/>
@@ -20,7 +20,9 @@
             <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
             <div class="validate"></div>
           </div>
-          <input type="submit" class="btn btn-info " value="Login">
+          <a class="btn btn-outline-secondary" href="{{url('/')}}">Back</a>
+          <input type="submit" class="btn btn-info" value="Login">
+          <p class="text-center mt-3">If You Don't Have Account, Please <a href="{{url('userregister')}}"> Register</a>.</p>
         </form>
       </div>
 

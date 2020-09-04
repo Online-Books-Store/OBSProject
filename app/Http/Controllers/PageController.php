@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\category;
+use App\comment;
 class PageController extends Controller
 {
     /**
@@ -28,9 +29,14 @@ class PageController extends Controller
     {
         return view('FrontEnd.userRegister');
     }
-    public function create()
+    public function create(Request $request, $id)
     {
-        //
+        $comment = new comment;
+        $comment->comment = $request->comment;
+        $comment->post_id = $id;
+        $comment->user_id = auth()->user()->id;
+        $comment->save();
+        return redirect(url('/book/'.$id.'/view'));
     }
 
     /**
@@ -53,7 +59,8 @@ class PageController extends Controller
     public function show($id)
     {
         $book = Post::findOrfail($id);
-        return view('Frontend.book',compact('book'));
+        $comments = comment::where('post_id',$id)->orderBy('id', 'DESC')->get();
+        return view('Frontend.book',compact('book','comments'));
     }
 
     /**
@@ -88,5 +95,11 @@ class PageController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function category($id)
+    {
+        $posts = post::where('category_id',$id)->get();
+        $category = category::find($id);
+        return view('Frontend.category',compact('posts','category'));
     }
 }

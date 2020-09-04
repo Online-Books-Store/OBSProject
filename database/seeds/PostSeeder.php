@@ -17,7 +17,6 @@ class PostSeeder extends Seeder
             $posts = new Post;
             $posts->user_id = rand(1,10);
             $posts->author_id = rand(1,10);
-            $posts->category_id = rand(1,10);
             $posts->title = $post->text(20);
             $posts->content = $post->text(200);
             $posts->save();

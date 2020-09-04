@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Post;
+use App\category;
 
 class PostController extends Controller
 {
@@ -17,7 +18,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('Backend/admin/post/create');
+        $categories = category::all();
+        return view('Backend/admin/post/create',compact('categories'));
     }
 
     public function store(PostRequest $request)
@@ -29,6 +31,7 @@ class PostController extends Controller
         // $imageName = time().'_'.$request->file('image')->getClientOriginalName();
         // $request->file('image')->storeAs('uploads',$imageName);
 
+
         if($request->hasFile('image')){
             $image = $request->file('image');
             $imageName = time().'_'.$image->getClientOriginalName();
@@ -37,29 +40,34 @@ class PostController extends Controller
             Post::create([
                 'title' => $request->title,
                 'content' => $request->content,
+                'category_id' => $request->category_id,
                 'image' => $imageName,
                 ]);
         }else{
             Post::create([
                 'title' => $request->title,
                 'content' => $request->content,
+                'category_id' => $request->category_id,
                 ]);
         }
 
         // $post = Post::create($request->all());
+
         return redirect('admin/dashboard/post')->with('success','Successfully Create Post!');
     }
 
     public function show($id)
     {
         $post = Post::find($id);
+        
         return view('Backend/admin/post/show',compact('post'));
     }
 
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('Backend/admin/post/update',compact('post'));
+        $categories = category::all();
+        return view('Backend/admin/post/update',compact('post','categories'));
     }
 
     public function update(PostRequest $request, $id)
