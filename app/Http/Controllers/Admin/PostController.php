@@ -76,7 +76,7 @@ class PostController extends Controller
         if($request->hasFile('image')){
             $image = $request->file('image');
             $imageName = time().'_'.$image->getClientOriginalName();
-            $request->file('image')->storeAs('upload',$imageName);  
+            $request->file('image')->storeAs('uploads',$imageName);  
 
             $post = Post::find($id);
             $post->title = $request->title;
