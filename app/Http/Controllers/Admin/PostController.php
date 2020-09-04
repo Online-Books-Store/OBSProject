@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
 use App\Post;
 use App\category;
+use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -72,30 +74,34 @@ class PostController extends Controller
 
     public function update(PostRequest $request, $id)
     {
-
+        $post = Post::find($id);
         if($request->hasFile('image')){
+            $imageName = $post->image;
+            File::delete('uploads/'.$imageName);
             $image = $request->file('image');
             $imageName = time().'_'.$image->getClientOriginalName();
-            $request->file('image')->storeAs('upload',$imageName);  
-
-            $post = Post::find($id);
-            $post->title = $request->title;
-            $post->content = $request->content;
-            $post->image = $imageName;
+            $request->file('image')->storeAs('uploads',$imageName);
+            $post->update([
+                'title' => $request->title,
+                'content' => $request->content,
+                'image' => $imageName,
+                'category_id' => $request->category_id,
+            ]);
         }else{
             $post = Post::find($id);
             $post->title = $request->title;
             $post->content = $request->content;
+            $post->category_id = $request->category_id;
+            $post->save();
         }
-
-
-        $post->save();
         return redirect('admin/dashboard/post')->with('success','Successfully Update Post!');
     }
 
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
+
+        Storage::delete('uploads/'.$post->image);
         $post->delete();
         return redirect('admin/dashboard/post')->with('success','Successfully Delete Post!');
     }
