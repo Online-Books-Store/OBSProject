@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\author;
+use Illuminate\Contracts\Validation\ImplicitRule;
 
 class AuthorSeeder extends Seeder
 {
@@ -12,11 +13,14 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
-        $author = "author";
-        for($i = 0; $i<10; $i++){
-            $authors = new author;
-            $authors->name = $author.$i;
-            $authors->save();
-        }
+
+        author::truncate();
+        $myauthors = ['Thint Luu','Khoon Nyo Thway','Kyaw Nyo Thway','Hpraw San','Thoe Saung'];     
+            foreach($myauthors as $myauthor){
+                $author = new author();
+                $author->name = $myauthor;
+                $author->save();
+            }
+        
     }
 }

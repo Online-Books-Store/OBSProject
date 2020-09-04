@@ -11,11 +11,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $category = "category";
-        for($i = 0; $i<10; $i++){
-            $categories = new category;
-            $categories->category_name = $category.$i;
-            $categories->save();
+        Category::truncate();
+        $categories = ['Translate','Knowledge','Essay Poem','Enjoy'];
+        foreach($categories as $category){
+            $cat = new Category();
+            $cat->category_name = $category;
+            $cat->save();
         }
     }
 }
