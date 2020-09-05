@@ -11,6 +11,13 @@
                 <br>
                 <div class="well">
                     {{$post->content}}
+                    <div class="border p-3 mt-3">
+                        <span>Author Name - </span>
+                        <a href="">{{$post->author->name}}</a>
+                        <br>
+                        <span>Category Name - </span>
+                        <a href="">{{$post->category->category_name}}</a>
+                    </div>
                 </div>
                 </div>
                 <div class="card-footer">

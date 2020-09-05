@@ -9,31 +9,27 @@ use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\author;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::when(request('search'),function($posts){
+            return $posts->where('title','like','%' . request('search') . '%');
+        })->orderBy('id','desc')->paginate(6);
         return view('Backend/admin/post/index',compact('posts'));
     }
 
     public function create()
     {
+        $authors = author::all();
         $categories = category::all();
-        return view('Backend/admin/post/create',compact('categories'));
+        return view('Backend/admin/post/create',compact('categories','authors'));
     }
 
     public function store(PostRequest $request)
     {
-        // $path = 'uploads';
-        // $imagePath = storage_path($path);
-
-        // $post = new Post();
-        // $imageName = time().'_'.$request->file('image')->getClientOriginalName();
-        // $request->file('image')->storeAs('uploads',$imageName);
-
-
         if($request->hasFile('image')){
             $image = $request->file('image');
             $imageName = time().'_'.$image->getClientOriginalName();
@@ -42,6 +38,7 @@ class PostController extends Controller
             Post::create([
                 'title' => $request->title,
                 'content' => $request->content,
+                'author_id' => $request->author_id,
                 'category_id' => $request->category_id,
                 'image' => $imageName,
                 ]);
@@ -49,12 +46,10 @@ class PostController extends Controller
             Post::create([
                 'title' => $request->title,
                 'content' => $request->content,
+                'author_id' => $request->author_id,
                 'category_id' => $request->category_id,
                 ]);
         }
-
-        // $post = Post::create($request->all());
-
         return redirect('admin/dashboard/post')->with('success','Successfully Create Post!');
     }
 
@@ -69,7 +64,8 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $categories = category::all();
-        return view('Backend/admin/post/update',compact('post','categories'));
+        $authors = author::all();
+        return view('Backend/admin/post/update',compact('post','categories','authors'));
     }
 
     public function update(PostRequest $request, $id)
@@ -85,12 +81,14 @@ class PostController extends Controller
                 'title' => $request->title,
                 'content' => $request->content,
                 'image' => $imageName,
+                'author_id' => $request->author_id,
                 'category_id' => $request->category_id,
             ]);
         }else{
             $post = Post::find($id);
             $post->title = $request->title;
             $post->content = $request->content;
+            $post->author_id = $request->author_id;
             $post->category_id = $request->category_id;
             $post->save();
         }

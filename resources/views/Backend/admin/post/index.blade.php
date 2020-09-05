@@ -17,8 +17,12 @@
                 <div class="well">
                     {{substr($post->content,0,100)}}
                 </div>
-                <div>
-                    {{-- <a href="#" class="text-red">{{$post->category->category_name}}</a> --}}
+                <div class="mt-3 border p-2">
+                    <span>Author Name - </span>
+                    <a href="#">{{$post->author->name}}</a>
+                    <br>
+                    <span>Category Name - </span>
+                    <a href="#">{{$post->category->category_name}}</a>
                 </div>
                 </div>
                 <div class="card-footer">
