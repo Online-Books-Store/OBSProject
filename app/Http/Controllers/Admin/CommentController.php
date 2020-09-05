@@ -13,9 +13,15 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $Request)
     {
-        $comments = comment::withTrashed()->orderBy('post_id')->paginate(20);
+        if($Request->search){
+            $text = $Request->search;
+            $comments = comment::withTrashed()->where('comment','like','%'.$text.'%')->orderBy('post_id')->paginate(20);
+        }else{
+
+            $comments = comment::withTrashed()->orderBy('post_id')->paginate(20);
+        }
         return view('Backend.admin.comment',compact('comments'));
     }
 
@@ -37,10 +43,6 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.

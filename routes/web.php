@@ -35,7 +35,7 @@ Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],funct
 });
 
 // Category Route
-Route::group(['prefix' =>'admin/dashboard'],function(){
+Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
     Route::get('/category','Admin\CategoryController@index');
     Route::get('/category/create','Admin\CategoryController@create');
     Route::post('/category/create','Admin\CategoryController@store');
@@ -68,7 +68,6 @@ Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],functi
     Route::get('/comment','Admin\CommentController@index');
     Route::get('/comment/{id}/hide','Admin\CommentController@hide');
     Route::get('/comment/{id}/show','Admin\CommentController@show');
-
 });
 
 

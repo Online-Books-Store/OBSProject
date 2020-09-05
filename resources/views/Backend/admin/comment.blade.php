@@ -21,17 +21,13 @@
                         <tr>
                               <td>{{$comment->id}}</td>
                               <td>
-                                    {{-- @foreach ($comment->post as $bookName) --}}
                                     @if ($comment->post)
                                     {{$comment->post->title}}                                        
                                     @endif
-                                    {{-- @endforeach --}}
                               </td>
                               <td>{{$comment->comment}}</td>
                               <td>
-                                    {{-- @foreach ($comment->user as $userName) --}}
                                     {{$comment->user->name}}
-                                    {{-- @endforeach --}}
                               </td>
                               <td>
                                     @if ($comment->deleted_at == null)

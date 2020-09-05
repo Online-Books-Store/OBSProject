@@ -9,9 +9,15 @@ use App\User;
 class UserController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        if($request->search){
+            $email = $request->search;
+            $users = User::where('email','like','%'.$email.'%')->get();
+        }else{
+
+            $users = User::all();
+        }
         return view('Backend/admin/user/index',compact('users'));
     }
 
