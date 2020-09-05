@@ -1,4 +1,4 @@
-        <!-- ======= F.A.Q Section ======= -->
+        {{-- <!-- ======= F.A.Q Section ======= -->
         <section id="faq" class="faq">
           <div class="container">
     
@@ -68,7 +68,7 @@
     
           </div>
         </section><!-- End F.A.Q Section -->
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= Contact Section ======= --> --}}
     <section id="contact" class="contact">
         <div class="container">
   
@@ -80,13 +80,12 @@
   
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="contact-about">
-                <h3>Vesperr</h3>
-                <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                <h3>Brighter Myanmar</h3>
                 <div class="social-links">
-                  <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                  <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                  <a href="https://www.twitter.com" class="twitter"><i class="icofont-twitter"></i></a>
+                  <a href="https://www.facebook.com/Brighter-Myanmar-2105127203059856" class="facebook"><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com" class="instagram"><i class="icofont-instagram"></i></a>
+                  <a href="https://www.linkedin.com" class="linkedin"><i class="icofont-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -95,17 +94,17 @@
               <div class="info">
                 <div>
                   <i class="ri-map-pin-line"></i>
-                  <p>A108 Adam Street<br>New York, NY 535022</p>
+                  <p>San Yeik Nyein 6th Street<br>Hledan , Yangon</p>
                 </div>
   
                 <div>
                   <i class="ri-mail-send-line"></i>
-                  <p>info@example.com</p>
+                  <p>BrighterMyanmar@gmail.com</p>
                 </div>
   
                 <div>
                   <i class="ri-phone-line"></i>
-                  <p>+1 5589 55488 55s</p>
+                  <p>+959 400 400 085</p>
                 </div>
   
               </div>

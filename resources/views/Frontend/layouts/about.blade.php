@@ -1,6 +1,6 @@
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-        <div class="container">
+    {{-- <!-- ======= About Us Section ======= -->
+    <section id="about" class="about"> --}}
+        {{-- <div class="container">
   
           <div class="section-title" data-aos="fade-up">
             <h2>About Us</h2>
@@ -80,4 +80,4 @@
           </div>
   
         </div>
-      </section><!-- End Counts Section -->
+      </section><!-- End Counts Section --> --}}
