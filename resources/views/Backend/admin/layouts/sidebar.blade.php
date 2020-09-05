@@ -67,6 +67,12 @@
                   <p>Author Page</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{url("admin/dashboard/comment")}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>comment Page</p>
+                </a>
+              </li>
             </ul>
           </li>
 

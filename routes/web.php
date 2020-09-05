@@ -64,6 +64,13 @@ Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],functi
     Route::get('/user/{id}/delete','Admin\UserController@destroy');
 });
 
+Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
+    Route::get('/comment','Admin\CommentController@index');
+    Route::get('/comment/{id}/hide','Admin\CommentController@hide');
+    Route::get('/comment/{id}/show','Admin\CommentController@show');
+
+});
+
 
 Auth::routes();
 
