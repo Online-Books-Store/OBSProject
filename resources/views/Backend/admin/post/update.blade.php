@@ -18,7 +18,18 @@
                         </textarea>
                     </div>
                     <div class="form-group">
-                        <label for="category">Post Category</label>
+                        <label for="author">Book Author</label>
+                        <select name="author_id" class="form-control">
+                            <option value="">Choice Author</option>
+                            @foreach($authors as $author)
+                                <option value="{{$author->id}}"
+                                {{ $post->author_id == $author->id ? 'selected' : '' }}
+                                >{{$author->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Book Category</label>
                         <select name="category_id" class="form-control">
                             <option value="">Select Category</option>
                             @foreach($categories as $category)
@@ -29,7 +40,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="image">Image</label>
+                        <label for="image">Book Image</label>
                         <input type="file" class="form-control-file mb-2" name="image" vlaue="{{isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150'}}">
                         <img src="{{asset('uploads/'.$post->image)}}" style="width:120px;" alt="">
                     </div>

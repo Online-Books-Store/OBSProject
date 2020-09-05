@@ -17,6 +17,15 @@
                         <textarea name="content" id="content" placeholder="Please Add Book Content ..." class="form-control" rows="10">{{old('content')}}</textarea>
                     </div>
                     <div class="form-group">
+                        <label for="content">Book Author</label>
+                        <select name="author_id" class="form-control">
+                            <option value="">Choice Author</option>
+                            @foreach($authors as $author)
+                                <option value="{{$author->id}}">{{$author->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="category">Book Category</label>
                         <select name="category_id" id="" class="form-control">
                             <option value="">Select Category</option>
@@ -29,7 +38,8 @@
                         <label for="image">Book Image</label>
                         <input type="file" class="form-control-file" name="image">
                     </div>
-                    <button class="btn btn-primary" type="submit">Create</button>
+                    <a href="{{url("admin/dashboard/post")}}" class="btn btn-info">Back</a>
+                    <button class="btn btn-primary float-right" type="submit">Create</button>
                 </form>
             </div>
         </div>
