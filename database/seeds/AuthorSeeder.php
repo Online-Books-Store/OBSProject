@@ -15,7 +15,7 @@ class AuthorSeeder extends Seeder
     {
 
         author::truncate();
-        $myauthors = ['Thint Luu','Khoon Nyo Thway','Kyaw Nyo Thway','Hpraw San','Thoe Saung'];     
+        $myauthors = ['Chan Myae Win','Thint Luu','Khoon Nyo Thway','Kyaw Nyo Thway','Hpraw San','Thoe Saung'];     
             foreach($myauthors as $myauthor){
                 $author = new author();
                 $author->name = $myauthor;

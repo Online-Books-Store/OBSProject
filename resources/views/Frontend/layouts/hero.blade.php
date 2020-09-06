@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+          <img src="assets/img/img.jpg" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
   <main id="main">
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients clients">
+    {{-- <section id="clients" class="clients clients">
       <div class="container">
 
         <div class="row">
@@ -53,4 +53,4 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section><!-- End Clients Section --> --}}
