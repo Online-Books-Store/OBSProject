@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header text-center">{{$post->title}}</div>
                 <div class="card-body">
-                <img src="{{isset($post->image) ? asset('upload/'.$post->image) : 'https://via.placeholder.com/150'}}"  class="rounded mx-auto d-block" style="width:500px; height:550px;">
+                <img src="{{isset($post->image) ? asset('uploads/'.$post->image) : 'https://via.placeholder.com/150'}}"  class="rounded mx-auto d-block" style="width:500px; height:550px;">
                 <br>
                 <div class="well">
                     {{$post->content}}
