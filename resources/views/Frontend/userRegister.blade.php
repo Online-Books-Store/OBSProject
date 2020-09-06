@@ -12,7 +12,7 @@
       <div class="card col-lg-5 col-md-12 p-3" data-aos-delay="300" style="border-radius: 25px;">
       <form method="POST" action="{{ route('register') }}">
         @csrf
-          <div class="form-group">
+          <div class="form-group mt-3">
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" style="border-radius: 25px; height: 50px; "/>
             <div class="validate"></div>
           </div>
