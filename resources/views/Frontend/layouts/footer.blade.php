@@ -11,7 +11,7 @@
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-            Designed by WeAre</a>
+            Designed by <b>WeAre</b></a>
           </div>
         </div>
         <div class="col-lg-6">
