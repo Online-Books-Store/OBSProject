@@ -30,8 +30,7 @@
                   </div> 
             </div>
             @endforeach
-      </div>
-           
+      </div>        
 </div>
 
 @include('FrontEnd.layouts.footer')
