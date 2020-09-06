@@ -98,9 +98,12 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-
         Storage::delete('uploads/'.$post->image);
         $post->delete();
         return redirect('admin/dashboard/post')->with('success','Successfully Delete Post!');
+    }
+
+    public function draft(){
+        dd("hello");
     }
 }

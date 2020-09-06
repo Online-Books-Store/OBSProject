@@ -32,6 +32,8 @@ Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],funct
     Route::get('/post/{id}/edit','Admin\PostController@edit');
     Route::post('/post/{id}/edit','Admin\PostController@update');
     Route::get('/post/{id}/delete','Admin\PostController@destroy');
+
+    Route::get('/post/draft','Admin\PostController@draft');
 });
 
 // Category Route

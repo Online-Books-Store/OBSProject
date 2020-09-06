@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="mb-3">
-        <a href="{{url("admin/dashboard/post/create")}}" class="btn btn-primary">Create</a>
+        <a href="{{url("admin/dashboard/post/create")}}" class="btn btn-primary"><i class="fas fa-plus-circle" style="color:#b7b7b7;"></i> Create</a>
+        <a href="{{url("admin/dashboard/post/draft")}}" class="btn btn-primary"><i class="far fa-trash-alt" style="color:#b7b7b7;"></i> Drafts</a>
     </div>
     @include('Backend/admin/messages/success')
     <div class="row justify-content-center">
