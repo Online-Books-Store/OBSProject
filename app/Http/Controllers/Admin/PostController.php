@@ -98,9 +98,25 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-
-        Storage::delete('uploads/'.$post->image);
         $post->delete();
         return redirect('admin/dashboard/post')->with('success','Successfully Delete Post!');
+    }
+
+    public function trash(){
+        $categories = category::all();
+        $posts = Post::onlyTrashed()->get();
+        return view('Backend/admin/post/trash',compact('posts','categories'));
+    }
+
+    public function restore($id){
+        Post::withTrashed()->find($id)->restore();
+        return redirect('admin/dashboard/post');
+    }
+
+    public function fdelete($id){
+        $post = Post::withTrashed()->find($id);
+        Storage::delete('uploads/'.$post->image);
+        $post->forceDelete();
+        return redirect('admin/dashboard/post');
     }
 }
