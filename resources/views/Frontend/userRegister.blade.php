@@ -38,5 +38,4 @@
     </div>
 
   </div>
-  @include('FrontEnd.layouts.js')
 @endsection

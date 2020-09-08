@@ -60,7 +60,7 @@ class PageController extends Controller
     {
         $book = Post::findOrfail($id);
         $comments = comment::where('post_id',$id)->orderBy('id', 'DESC')->get();
-        return view('Frontend.book',compact('book','comments'));
+        return view('Frontend.layouts.show',compact('book','comments'));
     }
 
     /**
