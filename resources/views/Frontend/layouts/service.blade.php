@@ -36,7 +36,7 @@
           <div class="row">
             @foreach ($books as $book)
             <div class="col-md-4 d-flex align-items-stretch mb-3" >
-              <div class="card" style="background-image: url({{asset('uploads/'.$book->image)}}); width:100%;" data-aos="fade-up" data-aos-delay="100">
+              <div class="card" style="background-image: url({{asset('uploads/'.$book->image)}}); width:100%; height: 200px;" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-body">
                 <h5 class="card-title"><a href="{{url('book/'.$book->id.'/view')}}">{{$book->title}}</a></h5>
                   <p class="card-text">{{ substr($book->content,0,100) }}</p>
