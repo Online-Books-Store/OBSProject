@@ -27,13 +27,14 @@ Route::get('admin/dashboard', function () {
 Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
     Route::get('/post','Admin\PostController@index');
     Route::get('/post/create','Admin\PostController@create');
+    Route::get('/post/trash','Admin\PostController@trash');
     Route::post('/post/create','Admin\PostController@store');
     Route::get('/post/{id}','Admin\PostController@show');
     Route::get('/post/{id}/edit','Admin\PostController@edit');
     Route::post('/post/{id}/edit','Admin\PostController@update');
     Route::get('/post/{id}/delete','Admin\PostController@destroy');
-
-    Route::get('/post/draft','Admin\PostController@draft');
+    Route::get('/post/{id}/restore','Admin\PostController@restore');
+    Route::get('/post/trash/{id}/delete','Admin\PostController@fdelete');
 });
 
 // Category Route
