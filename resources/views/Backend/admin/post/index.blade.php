@@ -4,7 +4,7 @@
 <div class="container">
     <div class="mb-3">
         <a href="{{url("admin/dashboard/post/create")}}" class="btn btn-primary"><i class="fas fa-plus-circle" style="color:#b7b7b7;"></i> Create</a>
-        <a href="{{url("admin/dashboard/post/trash")}}" class="btn btn-primary"><i class="far fa-trash-alt" style="color:#b7b7b7;"></i> Trash</a>
+        <a href="{{url("admin/dashboard/post/trash")}}" class="btn btn-info float-right"><i class="far fa-trash-alt" style="color:#b7b7b7;"></i> View Trash</a>
     </div>
     @include('Backend/admin/messages/success')
     <div class="row justify-content-center">
@@ -29,6 +29,10 @@
                 <div class="card-footer">
                     <div class="float-right">
                         <a href="{{url("admin/dashboard/post/$post->id")}}" class="btn btn-info">View</a>
+                    </div>
+                    <div class="float-left">
+                        <a href="{{url("admin/dashboard/post/$post->id/edit")}}" class="btn btn-primary">Edit</a>
+                        <a href="{{url("admin/dashboard/post/$post->id/delete")}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this post?');">Delete</a>
                     </div>
                 </div>
             </div>

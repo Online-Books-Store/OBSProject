@@ -24,10 +24,7 @@
                     <div class="float-left">
                         <a href="{{url("admin/dashboard/post")}}" class="btn btn-info">Back</a>
                     </div>
-                    <div class="float-right">
-                        <a href="{{url("admin/dashboard/post/$post->id/edit")}}" class="btn btn-primary">Edit</a>
-                        <a href="{{url("admin/dashboard/post/$post->id/delete")}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this post?');">Delete</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
