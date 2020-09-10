@@ -31,26 +31,21 @@
   
       <!-- ======= More Services Section ======= -->
       {{-- <section id="more-services" class="more-services"> --}}
-        <div class="container">
+        <div class="container-fluid">
   
+
           <div class="row">
             @foreach ($books as $book)
-            <div class="col-md-4 d-flex align-items-stretch mb-3" >
-              <div class="card" style="background-image: url({{asset('uploads/'.$book->image)}}); width:100%; height: 200px;" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-body">
-                <h5 class="card-title"><a href="{{url('book/'.$book->id.'/view')}}">{{$book->title}}</a></h5>
-                  <p class="card-text">{{ substr($book->content,0,100) }}</p>
-                  <div class="read-more"><a href="{{url('book/'.$book->id.'/view')}}"><i class="icofont-arrow-right"></i> Read More</a></div>
-                </div>
-              </div>
+            <div class="col-md-3 mb-3 text-center">
+                <div class="img" style="background-image: url({{asset('uploads/'.$book->image)}}); width: 100%; height: 390px;"></div>
+                <p> {{$book->title}} </p>
+                <div class="read-more"><a href="{{url('book/'.$book->id.'/view')}}"><i class="icofont-arrow-right"></i> Read More</a></div>
             </div>
             @endforeach
-            
           </div>
   
         </div>
       </section><!-- End More Services Section -->
-  
-      <!-- ======= Features Section ======= -->
+
 
   
