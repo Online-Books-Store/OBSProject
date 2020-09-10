@@ -17,17 +17,17 @@ class PageController extends Controller
     {
         $books = Post::limit(8)->get();
         $categories = category::all();
-        return view('FrontEnd.home',compact('books','categories'));
+        return view('Frontend.home',compact('books','categories'));
     }
 
     public function login()
     {
-        return view('FrontEnd.userLogin');
+        return view('Frontend.userLogin');
     }
 
     public function register()
     {
-        return view('FrontEnd.userRegister');
+        return view('Frontend.userRegister');
     }
     public function create(Request $request, $id)
     {

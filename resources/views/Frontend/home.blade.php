@@ -1,20 +1,20 @@
 
-@extends('FrontEnd.layouts.master')
+@extends('Frontend.layouts.master')
 
 @section('content')
-@include('FrontEnd.layouts.nav')
+@include('Frontend.layouts.nav')
 
-@include('FrontEnd.layouts.hero')
+@include('Frontend.layouts.hero')
 
-@include('FrontEnd.layouts.about')
+@include('Frontend.layouts.about')
 
-@include('FrontEnd.layouts.service')
+@include('Frontend.layouts.service')
 
-@include('FrontEnd.layouts.team')
+@include('Frontend.layouts.team')
 
-@include('FrontEnd.layouts.contact')
+@include('Frontend.layouts.contact')
 
-@include('FrontEnd.layouts.footer')
+@include('Frontend.layouts.footer')
 @endsection
 
 
