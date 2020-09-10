@@ -17,17 +17,17 @@ class PageController extends Controller
     {
         $books = Post::limit(8)->get();
         $categories = category::all();
-        return view('FrontEnd.home',compact('books','categories'));
+        return view('FrontEnd/home',compact('books','categories'));
     }
 
     public function login()
     {
-        return view('FrontEnd.userLogin');
+        return view('FrontEnd/userLogin');
     }
 
     public function register()
     {
-        return view('FrontEnd.userRegister');
+        return view('FrontEnd/userRegister');
     }
     public function create(Request $request, $id)
     {
@@ -60,7 +60,7 @@ class PageController extends Controller
     {
         $book = Post::findOrfail($id);
         $comments = comment::where('post_id',$id)->orderBy('id', 'DESC')->get();
-        return view('Frontend.layouts.show',compact('book','comments'));
+        return view('Frontend/layouts/show',compact('book','comments'));
     }
 
     /**
@@ -100,6 +100,6 @@ class PageController extends Controller
     {
         $posts = post::where('category_id',$id)->get();
         $category = category::find($id);
-        return view('Frontend.category',compact('posts','category'));
+        return view('Frontend/category',compact('posts','category'));
     }
 }
