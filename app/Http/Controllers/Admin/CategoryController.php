@@ -24,7 +24,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $category = category::create($request->all());
-        return redirect('admin/dashboard/category');
+        return redirect('admin/dashboard/category')->with('success','Category create success!');
     }
 
     public function edit($id)
@@ -38,13 +38,13 @@ class CategoryController extends Controller
         $category = category::find($id);
         $category->category_name = $request->category_name;
         $category->save();
-        return redirect('admin/dashboard/category');
+        return redirect('admin/dashboard/category')->with('success','Category update success!');
     }
 
     public function destroy($id)
     {
         $category = category::find($id);
         $category->delete();
-        return back();
+        return back()->with('success','Category delete success!');
     }
 }

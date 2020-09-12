@@ -36,7 +36,7 @@ class UserController extends Controller
         $user->status = $request->status;
         $user->save();
 
-        return redirect('admin/dashboard/user');
+        return redirect('admin/dashboard/user')->with('success','User create success!');
     }
 
     public function show($id)
@@ -59,13 +59,13 @@ class UserController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect('admin/dashboard/user');
+        return redirect('admin/dashboard/user')->with('success','User update success!');
     }
 
     public function destroy($id)
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('admin/dashboard/user');
+        return redirect('admin/dashboard/user')->with('success','User delete success!');
     }
 }

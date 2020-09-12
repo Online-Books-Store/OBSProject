@@ -5,6 +5,7 @@
     <div class="row">
     ‌<a href="{{url("admin/dashboard/author/create")}}" class="btn btn-primary mb-3">Create</a>
         <div class="col-md-12">
+        @include('Backend/admin/messages/success')
             <table class="table table-striped">
                 <thead>
                     <tr>
