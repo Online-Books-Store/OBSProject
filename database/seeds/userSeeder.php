@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\user;
+use App\User;
 class userSeeder extends Seeder
 {
     /**
@@ -12,7 +12,7 @@ class userSeeder extends Seeder
     public function run()
     {
         for($i = 0; $i<10; $i++){
-            $user = new user;
+            $user = new User;
             $user->name = 'username'.$i;
             $user->email = "username".$i."@gmail.com";
             $user->password = bcrypt('password');
