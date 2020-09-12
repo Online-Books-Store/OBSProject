@@ -17,17 +17,6 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -46,8 +35,6 @@
             <?php 
                 $path = $_SERVER['REQUEST_URI'];
             ?>
-
-
               <li class="nav-item">
                 <a href="{{url("admin/dashboard/post")}}" class="nav-link {{ Request::is('admin/dashboard/post') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>

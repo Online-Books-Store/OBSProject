@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\AuthorRequest;
 use App\author;
 
 class AuthorController extends Controller
@@ -20,7 +21,7 @@ class AuthorController extends Controller
         return view('Backend/admin/author/create');
     }
 
-    public function store(Request $request)
+    public function store(AuthorRequest $request)
     {
         $author = author::create($request->all());
         return redirect('admin/dashboard/author');
@@ -32,7 +33,7 @@ class AuthorController extends Controller
         return view('Backend/admin/author/edit',compact('author'));
     }
 
-    public function update(Request $request, $id)
+    public function update(AuthorRequest $request, $id)
     {
         $author = author::find($id);
         $author->name = $request->name;
