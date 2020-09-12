@@ -3,17 +3,46 @@
 @section('content')
 @include('Frontend.layouts.nav')
 <div class="hr mt-3 pt-5"></div>
-<div class="container">
-      <div class="card pt-3 mb-3">
-            <div class="card-title">
-                  <h2>{{$book->title}}</h2>
+<div class="container mt-3">
+      <div class="row pt-3 mb-3">            
+            <div class="col-md-6 text-center">
+                  <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="img-fluid img-thumbnail">
             </div>
-            <div class="care-body">
-                  <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="img-fluid">
+            <div class="col-md-6">
+                  <h3>Book Detial</h3>
+                  <div>
+                        <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Book Name</th>
+                                  <th scope="col">{{$book->title}}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Author</th>
+                                  <td>{{$book->author->name}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Category</th>
+                                  <td>{{$book->category->category_name}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Price</th>
+                                  <td>5000</td>
+                                </tr>
+                              </tbody>
+                            </table> 
+                  </div>
+            </div>
+      </div>
+      <div class="container p-3">
+            <h3>Book Overview</h3>
+            <div class="card">
                   <p class="m-3">{{$book->content}}</p>
             </div>
       </div>
-      <div class="container">
+      <div class="container m-3">
             @if (auth()->check())
             <form method="" action="{{url('/book/'. $book->id .'/comment')}}">
                   <div class="row">

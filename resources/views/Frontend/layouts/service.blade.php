@@ -1,5 +1,5 @@
 <section id="features" class="features">
-  <div class="container-fluid bg-info">
+  <div class="container-fluid ">
     <div class="row" data-aos="fade-up" data-aos-delay="300">
       @foreach ($categories as $category)
       <div class="col-md-3 p-2">
