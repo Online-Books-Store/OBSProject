@@ -16,6 +16,9 @@ class userSeeder extends Seeder
             $user->name = 'username'.$i;
             $user->email = "username".$i."@gmail.com";
             $user->password = bcrypt('password');
+            if($i <=2 ){
+                $user->status = 'admin';
+            }
             $user->save();
         }
     }
