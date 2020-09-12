@@ -12,7 +12,7 @@
                         <input type="text" name="name" class="form-control" placeholder="Please Add Author Name">
                     </div>
                     <div class="float-left">
-                        <a href="{{url("admin/dashboard/author")}}" class="btn btn-primary">Back</a>
+                        <a href="{{url("admin/dashboard/author")}}" class="btn btn-outline-secondary">Back</a>
                     </div>
                     <div class="float-right">
                         <button class="btn btn-primary" type="submit">Create</button>

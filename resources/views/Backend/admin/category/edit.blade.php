@@ -12,7 +12,7 @@
                         <input type="text" value="{{$category->category_name}}" name="category_name" class="form-control" placeholder="Please Add Author Name">
                     </div>
                     <div class="float-left">
-                        <a href="{{url("admin/dashboard/category")}}" class="btn btn-primary">Back</a>
+                        <a href="{{url("admin/dashboard/category")}}" class="btn btn-outline-secondary">Back</a>
                     </div>
                     <div class="float-right">
                         <button class="btn btn-primary" type="submit">Update</button>

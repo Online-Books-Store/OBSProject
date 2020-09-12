@@ -12,7 +12,7 @@
                         <input type="text" name="category_name" class="form-control" placeholder="Please add category name">
                     </div>
                     <div class="float-left">
-                        <a href="{{url("admin/dashboard/category")}}" class="btn btn-primary">Back</a>
+                        <a href="{{url("admin/dashboard/category")}}" class="btn btn-outline-secondary">Back</a>
                     </div>
                     <div class="float-right">
                         <button class="btn btn-primary" type="submit">Create</button>

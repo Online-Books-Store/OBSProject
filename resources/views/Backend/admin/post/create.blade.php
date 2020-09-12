@@ -38,7 +38,7 @@
                         <label for="image">Book Image</label>
                         <input type="file" class="form-control-file" name="image">
                     </div>
-                    <a href="{{url("admin/dashboard/post")}}" class="btn btn-info">Back</a>
+                    <a href="{{url("admin/dashboard/post")}}" class="btn btn-outline-secondary">Back</a>
                     <button class="btn btn-primary float-right" type="submit">Create</button>
                 </form>
             </div>
