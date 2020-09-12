@@ -28,7 +28,7 @@
                         </select>
                     </div>
                     <div class="float-left">
-                        <a href="{{url("admin/dashboard/user")}}" class="btn btn-primary">Back</a>
+                        <a href="{{url("admin/dashboard/user")}}" class="btn btn-outline-secondary">Back</a>
                     </div>
                     <div class="float-right">
                         <button class="btn btn-primary" type="submit">Update</button>
