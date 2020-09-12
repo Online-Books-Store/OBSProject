@@ -11,10 +11,10 @@ class userSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i<10; $i++){
+        for($i = 0; $i<4; $i++){
             $user = new User;
-            $user->name = 'username'.$i;
-            $user->email = "username".$i."@gmail.com";
+            $user->name = 'admin'.$i;
+            $user->email = "admin".$i."@gmail.com";
             $user->password = bcrypt('password');
             if($i <=2 ){
                 $user->status = 'admin';
