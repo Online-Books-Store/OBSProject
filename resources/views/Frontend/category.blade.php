@@ -1,9 +1,9 @@
-@extends('FrontEnd.layouts.master')
+@extends('Frontend.layouts.master')
 
 @section('content')
-@include('FrontEnd.layouts.nav')
+@include('Frontend.layouts.nav')
 
-@include('FrontEnd.layouts.hero')
+@include('Frontend.layouts.hero')
 
 
 <div class="container">
@@ -18,21 +18,21 @@
                         </div>
                         <div class="card-body">
                               @if ($book->image)
-                              <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="w-100"> 
+                              <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="w-100">
                               @else
-                              <img src="{{url(asset('assets/img/more-services-1.jpg'))}}" alt="" class="w-100">                   
+                              <img src="{{url(asset('assets/img/more-services-1.jpg'))}}" alt="" class="w-100">
                               @endif
                               <p class="m-3">{{substr($book->content,0,20)}}</p>
                         </div>
                         <div class="card-footer">
                         <a href="{{url('book/'.$book->id.'/view')}}">See More</a>
                         </div>
-                  </div> 
+                  </div>
             </div>
             @endforeach
-      </div>        
+      </div>
 </div>
 
-@include('FrontEnd.layouts.footer')
+@include('Frontend.layouts.footer')
 @endsection
 
