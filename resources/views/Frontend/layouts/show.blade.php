@@ -1,7 +1,7 @@
-@extends('FrontEnd.layouts.master')
+@extends('Frontend.layouts.master')
 
 @section('content')
-@include('FrontEnd.layouts.nav')
+@include('Frontend.layouts.nav')
 <div class="hr mt-3 pt-5"></div>
 <div class="container">
       <div class="card pt-3 mb-3">
@@ -9,7 +9,7 @@
                   <h2>{{$book->title}}</h2>
             </div>
             <div class="care-body">
-                  <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="img-fluid"> 
+                  <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="img-fluid">
                   <p class="m-3">{{$book->content}}</p>
             </div>
       </div>
@@ -29,7 +29,7 @@
             <p>Do you Want to Review? Please <a href="{{url('userlogin')}}">Login</a> OR <a href="{{url('userregister')}}">Register</a></p>
             @endif
 
-            
+
       </div>
       <div class="container">
             @foreach ($comments as $comment)
@@ -44,11 +44,11 @@
                   </div>
             </div>
             @endforeach
-            
+
       </div>
-      
+
 </div>
 
-@include('FrontEnd.layouts.footer')
+@include('Frontend.layouts.footer')
 @endsection
 
