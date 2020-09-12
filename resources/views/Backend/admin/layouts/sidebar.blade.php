@@ -44,31 +44,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url("admin/dashboard/post")}}" class="nav-link active">
+                <a href="{{url("admin/dashboard/post")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Book Page</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url("admin/dashboard/category")}}" class="nav-link active">
+                <a href="{{url("admin/dashboard/category")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Category Page</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url("admin/dashboard/user")}}" class="nav-link active">
+                <a href="{{url("admin/dashboard/user")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User Page</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url("admin/dashboard/author")}}" class="nav-link active">
+                <a href="{{url("admin/dashboard/author")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Author Page</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url("admin/dashboard/comment")}}" class="nav-link active">
+                <a href="{{url("admin/dashboard/comment")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>comment Page</p>
                 </a>
