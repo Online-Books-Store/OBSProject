@@ -7,7 +7,7 @@
         <a href="{{url("admin/dashboard/post/trash")}}" class="btn btn-outline-secondary float-right"><i class="far fa-trash-alt" style="color:#b7b7b7;"></i> View Trash</a>
     </div>
     @include('Backend/admin/messages/success')
-    <div class="row justify-content-center">
+    <div class="row">
         @foreach($posts as $post)
         <div class="col-md-4">
             <div class="card text-dark mb-3">

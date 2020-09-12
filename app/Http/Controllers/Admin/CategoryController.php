@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\category;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -20,10 +21,10 @@ class CategoryController extends Controller
         return view('Backend/admin/category/create');
     }
 
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $category = category::create($request->all());
-        return redirect('admin/dashboard/category');
+        return redirect('admin/dashboard/category')->with('success','Category create success!');
     }
 
     public function edit($id)
@@ -32,18 +33,18 @@ class CategoryController extends Controller
         return view('Backend/admin/category/edit',compact('category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
         $category = category::find($id);
         $category->category_name = $request->category_name;
         $category->save();
-        return redirect('admin/dashboard/category');
+        return redirect('admin/dashboard/category')->with('success','Category update success!');
     }
 
     public function destroy($id)
     {
         $category = category::find($id);
         $category->delete();
-        return back();
+        return back()->with('success','Category delete success!');
     }
 }

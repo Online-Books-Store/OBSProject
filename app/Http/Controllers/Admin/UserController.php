@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\User;
 
 class UserController extends Controller
@@ -26,7 +27,7 @@ class UserController extends Controller
         return view('Backend/admin/user/create');
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $user = new User();
         $user->name = $request->name;
@@ -35,7 +36,7 @@ class UserController extends Controller
         $user->status = $request->status;
         $user->save();
 
-        return redirect('admin/dashboard/user');
+        return redirect('admin/dashboard/user')->with('success','User create success!');
     }
 
     public function show($id)
@@ -49,7 +50,7 @@ class UserController extends Controller
         return view('Backend/admin/user/edit',compact('user'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
         $user = User::find($id);
         $user->update([
@@ -58,13 +59,13 @@ class UserController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect('admin/dashboard/user');
+        return redirect('admin/dashboard/user')->with('success','User update success!');
     }
 
     public function destroy($id)
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('admin/dashboard/user');
+        return redirect('admin/dashboard/user')->with('success','User delete success!');
     }
 }
