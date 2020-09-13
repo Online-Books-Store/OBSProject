@@ -44,28 +44,28 @@
             <form action=" {{url('/contact')}} " method="post">
               @csrf
               <div class="form-group">
-                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" required name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
 
               </div>
               @error('name')
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
               <div class="form-group">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" required class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
 
               </div>
               @error('email')
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
               <div class="form-group">
-                <input type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" required class="form-control @error('subject') is-invalid @enderror" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
 
               </div>
               @error('subject')
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
               <div class="form-group">
-                <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea required class="form-control @error('message') is-invalid @enderror" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               </div>
               @error('message')
                   <div class="alert alert-danger">{{ $message }}</div>
