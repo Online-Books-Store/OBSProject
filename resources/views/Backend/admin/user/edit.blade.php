@@ -19,8 +19,8 @@
                     <div class="form-group">
                         <label for="name">User Role</label>
                         <select name="status" id="status" class="form-control">
-                            <option value="admin">Select Role</option>
-                            <option value="" 
+                            <option value="">Select Role</option>
+                            <option value="admin" 
                                 @if($user->status == "admin") selected @endif
                             >Admin</option>
                             <option value="user"

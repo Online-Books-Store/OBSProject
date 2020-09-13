@@ -8,17 +8,4 @@
         <a href="{{url("admin/dashboard/post")}}" class="nav-link">Home</a>
       </li>
     </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-auto">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" name="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
   </nav>

@@ -67,6 +67,13 @@ Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],functi
     Route::get('/user/{id}/delete','Admin\UserController@destroy');
 });
 
+// Profile Route
+Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
+    Route::get('/profile','Admin\ProfileController@index')->name('user.profile');
+
+
+});
+
 Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
     Route::get('/comment','Admin\CommentController@index');
     Route::get('/comment/{id}/hide','Admin\CommentController@hide');
