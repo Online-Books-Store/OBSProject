@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="{{url("/")}}" class="brand-link">
       <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Book Store</span>
+      <span class="brand-text font-weighat-light">Book Store</span>
     </a>
 
     <!-- Sidebar -->
@@ -71,6 +71,12 @@
                 <a href="{{url("admin/dashboard/comment")}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>comment Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url("admin/dashboard/contact")}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>contact Page</p>
                 </a>
               </li>
             </ul>

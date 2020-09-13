@@ -73,6 +73,8 @@ Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],functi
     Route::get('/comment/{id}/show','Admin\CommentController@show');
 });
 
+Route::get('/admin/dashboard/contact','ContactController@index')->middleware('UserMiddleware');
+Route::post('/admin/dashboard/contact','ContactController@store')->middleware('UserMiddleware');
 
 Auth::routes();
 
