@@ -17,31 +17,27 @@
       <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
       @csrf
         <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" name="name" class="form-control col-lg-8" value="{{$profile->name}}">
+          <label class="col-lg-3 control-label"> Name:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value=" {{Auth::user()->name}} " type="text">
+          </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{$profile->email}}" name="email" type="email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Current Password:</label>
-          <div class="col-md-8">
-            <input class="form-control" type="password" name="current">
+            <input class="form-control" value="{{Auth::user()->email}}" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Password:</label>
           <div class="col-md-8">
-            <input class="form-control" type="password" name="newpassword">
+            <input class="form-control" value="{{Auth::user()->password}}" type="password">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Confirm password:</label>
           <div class="col-md-8">
-            <input class="form-control" type="password" name="confirmpassword">
+            <input class="form-control" value="{{Auth::user()->password}}" type="password">
           </div>
         </div>
         <div class="form-group col-lg-8">

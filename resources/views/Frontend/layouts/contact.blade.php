@@ -70,7 +70,7 @@
               @error('message')
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
-              <input type="submit" value="Send" class="btn btn-info">
+              <input type="submit" value="Send" class="btn" style="background:#3599DA; color: #fff; border-radius: 25px; width: 100px;">
             </form>
           </div>
         </div>
