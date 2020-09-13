@@ -69,8 +69,8 @@ Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],functi
 
 // Profile Route
 Route::group(['prefix' =>'admin/dashboard','middleware'=>'UserMiddleware'],function(){
-    Route::get('/profile','Admin\ProfileController@index')->name('user.profile');
-
+    Route::get('/profile/{id}','Admin\ProfileController@index')->name('user.profile');
+    Route::post('/profile/{id}','Admin\ProfileController@update');
 
 });
 
