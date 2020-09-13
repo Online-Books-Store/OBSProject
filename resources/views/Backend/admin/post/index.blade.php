@@ -2,9 +2,15 @@
 @section('title','Post')
 @section('content')
 <div class="container">
+    <div class="float-right">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
     <div class="mb-3">
         <a href="{{url("admin/dashboard/post/create")}}" class="btn btn-primary"><i class="fas fa-plus-circle" style="color:#b7b7b7;"></i> Create</a>
-        <a href="{{url("admin/dashboard/post/trash")}}" class="btn btn-outline-secondary float-right"><i class="far fa-trash-alt" style="color:#b7b7b7;"></i> View Trash</a>
+        <a href="{{url("admin/dashboard/post/trash")}}" class="btn btn-outline-secondary"><i class="far fa-trash-alt" style="color:#b7b7b7;"></i> View Trash</a>
     </div>
     @include('Backend/admin/messages/success')
     <div class="row">
