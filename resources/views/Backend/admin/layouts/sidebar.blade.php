@@ -68,7 +68,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url("admin/dashboard/contact")}}" class="nav-link active">
+                <a href="{{url("admin/dashboard/contact")}}" class="nav-link {{ Request::is('admin/dashboard/contact') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>contact Page</p>
                 </a>

@@ -81,7 +81,7 @@ Route::group(['prefix'=>'admin/dashboard','middleware'=>'UserMiddleware'],functi
 });
 
 Route::get('/admin/dashboard/contact','ContactController@index')->middleware('UserMiddleware');
-Route::post('/admin/dashboard/contact','ContactController@store')->middleware('UserMiddleware');
+Route::post('/contact','ContactController@store');
 
 Auth::routes();
 

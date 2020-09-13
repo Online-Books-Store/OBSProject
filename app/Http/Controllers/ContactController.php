@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Http\Requests\ContentRequest;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -29,10 +30,10 @@ class ContactController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(ContentRequest $request)
     {
         Contact::create($request->all());
-        return redirect('/');
+        return redirect('/')->with('success','Message Send is Success!');
     }
 
 
