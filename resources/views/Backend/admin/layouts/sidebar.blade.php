@@ -14,7 +14,7 @@
         </div>
 
         <div class="info">
-        <a href="{{route('user.profile')}}" class="d-block">{{Auth::user()->name}}</a>
+        <a href="{{route('user.profile',Auth::user()->id)}}" class="d-block">{{Auth::user()->name}}</a>
         </div>
 
       </div>

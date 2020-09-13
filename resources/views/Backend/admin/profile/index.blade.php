@@ -24,25 +24,25 @@
         <div class="form-group">
           <label class="col-lg-3 control-label"> Name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Jane" type="text">
+            <input class="form-control" value=" {{Auth::user()->name}} " type="text">
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="janesemail@gmail.com" type="text">
+            <input class="form-control" value="{{Auth::user()->email}}" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Password:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
+            <input class="form-control" value="{{Auth::user()->password}}" type="password">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Confirm password:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
+            <input class="form-control" value="{{Auth::user()->password}}" type="password">
           </div>
         </div>
         <div class="form-group">
