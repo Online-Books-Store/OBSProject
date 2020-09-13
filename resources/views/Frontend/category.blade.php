@@ -3,36 +3,27 @@
 @section('content')
 @include('Frontend.layouts.nav')
 
-@include('Frontend.layouts.hero')
+{{-- @include('Frontend.layouts.hero') --}}
 
+<section class="mt-5">
+      <div class="container">
+      <h2 class="m-3 text-info font-weight-bold">{{strtoupper($category->category_name)}}</h2>
+      <hr>
+            <div class="row">
+                  @foreach ($posts as $book)
+                        <div class="col-md-2">
+                              @if ($book->image)
+                              <a href="{{url('book/'.$book->id.'/view')}}"><img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="w-100 img-thumbnail"></a>
+                              @else
+                              <a href="{{url('book/'.$book->id.'/view')}}"><img src="{{url(asset('assets/img/more-services-1.jpg'))}}" alt="" class="w-100 img-thumbnail"></a>
+                              @endif
 
-<div class="container">
-<h2 class="m-3 text-info font-weight-bold">{{strtoupper($category->category_name)}}</h2>
-<hr>
-      <div class="row">
-            @foreach ($posts as $book)
-            <div class="col-3">
-                  <div class="card p-1 m-1">
-                        <div class="card-title">
                               <h5 class="text-center mt-2">{{$book->title}}</h5>
                         </div>
-                        <div class="card-body">
-                              @if ($book->image)
-                              <img src="{{url(asset('/uploads/'.$book->image))}}" alt="" class="w-100">
-                              @else
-                              <img src="{{url(asset('assets/img/more-services-1.jpg'))}}" alt="" class="w-100">
-                              @endif
-                              <p class="m-3">{{substr($book->content,0,20)}}</p>
-                        </div>
-                        <div class="card-footer">
-                        <a href="{{url('book/'.$book->id.'/view')}}">See More</a>
-                        </div>
-                  </div>
+                  @endforeach
             </div>
-            @endforeach
       </div>
-</div>
-
+</section>
 @include('Frontend.layouts.footer')
 @endsection
 

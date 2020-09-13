@@ -11,10 +11,10 @@
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="member" data-aos="fade-up" data-aos-delay="100">
                 <div class="member-img pt-5">
-                  <img src="assets/img/team/person.png" class="img-fluid w-50 mb-4" alt="">
+                  <img src="assets/img/team/man.png" class="img-fluid w-50 mb-4" alt="">
                   <div class="social">
                     <a href=""><i class="icofont-twitter"></i></a>
-                    <a href="https://www.facebook.com/zeyar.tun.543/">
+                    <a href="https://www.facebook.com/zeyar.tun.543/" target="_blank">
                       <i class="icofont-facebook"></i>
                     </a>
                     <a href=""><i class="icofont-instagram"></i></a>
@@ -31,10 +31,10 @@
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="member" data-aos="fade-up" data-aos-delay="200">
                 <div class="member-img pt-5">
-                  <img src="assets/img/team/man.png" class="img-fluid w-50 mb-4" alt="">
+                  <img src="assets/img/team/person.png" class="img-fluid w-50 mb-4" alt="">
                   <div class="social">
                     <a href=""><i class="icofont-twitter"></i></a>
-                    <a href="https://www.facebook.com/holugyi.007">
+                    <a href="https://www.facebook.com/holugyi.007" target="_blank">
                       <i class="icofont-facebook"></i>
                     </a>
                     <a href=""><i class="icofont-instagram"></i></a>
@@ -54,7 +54,7 @@
                   <img src="assets/img/team/boy.png" class="img-fluid w-50 mb-4" alt="">
                   <div class="social">
                     <a href=""><i class="icofont-twitter"></i></a>
-                    <a href="https://www.facebook.com/YWyneKo/"><i class="icofont-facebook"></i></a>
+                    <a href="https://www.facebook.com/YWyneKo/" target="_blank"><i class="icofont-facebook"></i></a>
                     <a href=""><i class="icofont-instagram"></i></a>
                     <a href=""><i class="icofont-linkedin"></i></a>
                   </div>
