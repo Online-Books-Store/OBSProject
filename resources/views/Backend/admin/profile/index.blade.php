@@ -10,10 +10,6 @@
         <img src="{{ isset($profile->image) ? asset("uploads/$profile->image") : 'http://lorempixel.com/200/200/people/9/' }}" class="avatar img-circle img-thumbnail" alt="avatar">
       </div>
     </div>
-
-
-
-    
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
     @include('Backend/admin/messages/passerror')
@@ -30,26 +26,18 @@
             <input class="form-control" value="{{$profile->email}}" name="email" type="email">
           </div>
         </div>
-
-
-
         <div class="form-group">
           <label class="col-md-3 control-label">Current Password:</label>
           <div class="col-md-8">
             <input class="form-control" type="password" name="current">
           </div>
         </div>
-
-
-
         <div class="form-group">
           <label class="col-md-3 control-label">Password:</label>
           <div class="col-md-8">
             <input class="form-control" type="password" name="newpassword">
           </div>
         </div>
-
-
         <div class="form-group">
           <label class="col-md-3 control-label">Confirm password:</label>
           <div class="col-md-8">
@@ -60,8 +48,6 @@
         <h6>Upload a different photo...</h6>
         <input type="file" name="image">
         </div>
-
-
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
@@ -70,8 +56,6 @@
             <a href="{{url("admin/dashboard")}}" class="btn btn-default">Cancel</a>
           </div>
         </div>
-
-
       </form>
     </div>
   </div>
